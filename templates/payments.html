@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section class="section">
+    <div class="container text-center">
+      <h2>Pagamentos</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Valor</th>
+            <th>Status</th>
+            <th>Data de Criação</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for payment_info in payment_info_list %}
+            <tr>
+              <td>{{ payment_info.id }}</td>
+              <td>{{ payment_info.amount }}</td>
+              <td>{{ payment_info.status }}</td>
+              <td>{{ payment_info.created }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+{% endblock %}
